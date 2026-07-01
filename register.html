@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V-Phone | Register</title>
+  <link rel="stylesheet" href="register.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <header>
+    <div class="header-bg"></div>
+    <div class="header-content">
+      <div class="logo">V-Phone</div>
+      <nav class="navbar">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="promotion.html">Promotion</a></li>
+          <li><a href="about.html">About&nbsp;Us</a></li>
+          <li><a href="register.html" class="active">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="register-container">
+      <h2>Create Your Account</h2>
+      <form action="#" method="POST" class="register-form">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Your full name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Choose a strong password" required />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Repeat your password"
+          required />
+
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section footer-left">
+        <h3>V-Phone</h3>
+        <p>Leading Innovation, Shaping the Future</p>
+      </div>
+      <div class="footer-section footer-center">
+        <h3>Quick Links</h3>
+        <a href="products.html">Products</a>
+        <a href="promotion.html">Promotion</a>
+        <a href="about.html">About Us</a>
+        <a href="register.html">Register</a>
+      </div>
+      <div class="footer-section footer-right">
+        <h3>Contact</h3>
+        <p>Email: support@vphone.com</p>
+        <p>Phone: (021) 1234-5678</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 V-Phone. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="register.js"></script>
+
+</body>
+
+</html>
