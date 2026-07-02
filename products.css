@@ -113,8 +113,8 @@ header {
 /* BIAR GAMBAR KECIL ESTETIK GAK RAKSASA LAGI */
 .product-card img {
   width: 100%;
-  max-width: 200px;    /* Batas lebar foto biar proporsional */
-  height: 220px;       /* Batas tinggi foto */
+  max-width: 50px;    /* Batas lebar foto biar proporsional */
+  height: 50px;       /* Batas tinggi foto */
   object-fit: contain; /* Foto auto-menyesuaikan diri tanpa gepeng */
   margin-bottom: 15px;
 }
