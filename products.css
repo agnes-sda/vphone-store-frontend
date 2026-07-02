@@ -1,24 +1,26 @@
-/* Reset & Base Styling */
+/* ==========================================
+   KODE STANDAR AWAL V-PHONE PRODUCTS STYLE
+   ========================================== */
+
 * {
   margin: 0;
   padding: 0;
-  box-style: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  background-color: #fcebe9; /* Warna pink pastel lembut biar seragam */
+  background-color: #fcebe9;
   color: #333;
 }
 
-/* Header & Navigation Styling */
+/* Header & Navigation */
 header {
   background: linear-gradient(to right, #8a6361, #ab8280);
-  padding: 15px 5%;
+  padding: 20px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -36,21 +38,16 @@ header {
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
   padding: 5px 10px;
-  transition: all 0.3s ease;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a.active {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
 }
 
-.nav-toggle {
-  display: none;
-}
-
-/* Filter Section */
+/* Filter Buttons Section */
 .filter-section {
   text-align: center;
   margin: 40px 0 20px 0;
@@ -74,69 +71,68 @@ header {
   padding: 8px 20px;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: 500;
-  transition: background 0.3s;
+  font-weight: bold;
 }
 
-.filter-btn:hover, .filter-btn.active {
+.filter-btn.active, .filter-btn:hover {
   background-color: #8a6361;
 }
 
-/* --- KUNCI UTAMA BIAR SEJAJAR 3-3 --- */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Maksa bikin 3 kolom sejajar */
-  gap: 30px;
+/* ==========================================
+   PENGATURAN UTAMA SEJAJAR 3 PRODUK (GRID)
+   ========================================== */
+.products, .products-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* Pas maksa 3 kolom sejajar ke samping */
+  gap: 30px !important;
   max-width: 1200px;
   margin: 0 auto 50px auto;
   padding: 0 20px;
 }
 
-/* Card Container Produk */
-.product-card {
+/* Card / Kotak Produk */
+.product, .product-card {
   background: #fff;
   border-radius: 15px;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  transition: transform 0.3s;
+  justify-content: space-between;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-/* BIAR GAMBAR KECIL ESTETIK GAK RAKSASA LAGI */
-.product-card img {
-  width: 100%;
-  max-width: 50px;    /* Batas lebar foto biar proporsional */
-  height: 50px;       /* Batas tinggi foto */
-  object-fit: contain; /* Foto auto-menyesuaikan diri tanpa gepeng */
+/* ==========================================
+   PENJINAK UKURAN FOTO (BIAR GAK RAKSASA)
+   ========================================== */
+.product img, .product-card img {
+  width: 100% !important;
+  max-width: 180px !important;  /* Lebar pas biar gak kegedean */
+  height: 200px !important;     /* Tinggi pas biar gak makan tempat */
+  object-fit: contain !important; /* Foto auto proporsional, gak bakal gepeng */
   margin-bottom: 15px;
+  display: block;
 }
 
-.product-card h3 {
+.product h3, .product-card h3 {
   font-size: 18px;
   color: #444;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.product-card .price {
+.product p, .product-card .price {
   font-weight: bold;
   color: #8a6361;
   margin-bottom: 15px;
 }
 
 /* Tombol Buy Now */
-.buy-now-btn {
+.product button, .buy-now-btn, .buy-btn {
   background-color: #ab8280;
   color: white;
   border: none;
-  padding: 10px 25px;
+  padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
@@ -144,11 +140,11 @@ header {
   transition: background 0.3s;
 }
 
-.buy-now-btn:hover {
+.product button:hover, .buy-now-btn:hover, .buy-btn:hover {
   background-color: #8a6361;
 }
 
-/* Footer Styling */
+/* Footer Section */
 footer {
   background-color: #8a6361;
   color: #fff;
@@ -180,10 +176,6 @@ footer {
   margin-bottom: 8px;
 }
 
-.footer-section a:hover {
-  color: #fff;
-}
-
 .footer-bottom {
   text-align: center;
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -192,13 +184,9 @@ footer {
   color: #ddd;
 }
 
-/* Responsif Layar HP biar gak hancur */
+/* Responsive HP */
 @media (max-width: 768px) {
-  .products-grid {
-    grid-template-columns: repeat(1, 1fr); /* Kalau di HP jadi 1 baris saja */
-  }
-  header {
-    flex-direction: column;
-    gap: 10px;
+  .products, .products-grid {
+    grid-template-columns: 1fr !important;
   }
 }
