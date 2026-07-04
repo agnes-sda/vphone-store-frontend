@@ -4,97 +4,202 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>V-Phone | Products</title>
-  <link rel="stylesheet" href="products.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    body {
+      background-color: #fcebe9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(to right, #8a6361, #ab8280);
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+    }
+    .nav-links a.active {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      width: 100%;
+    }
+    .filter-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .filter-section h2 {
+      color: #8a6361;
+      margin-bottom: 15px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-card img {
+      width: 100%;
+      max-width: 180px;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    .product-card h3 {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    .product-card .price {
+      font-weight: bold;
+      color: #8a6361;
+      margin-bottom: 15px;
+    }
+    .buy-btn {
+      background-color: #ab8280;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+    }
+    footer {
+      background-color: #8a6361;
+      color: #fff;
+      padding: 40px 5% 20px 5%;
+      margin-top: 50px;
+      width: 100%;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 20px auto;
+    }
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+    }
+    .footer-section h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .footer-section p, .footer-section a {
+      font-size: 14px;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 20px;
+      font-size: 13px;
+    }
+    @media (max-width: 768px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="header-bg"></div>
-    <div class="header-content">
-      <div class="logo">V-Phone</div>
-      <nav>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html" class="active">Products</a></li>
-          <li><a href="promotion.html">Promotion</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="register.html">Register</a></li>
-        </ul>
-      </nav>
-    </div>
+    <div class="logo">V-Phone</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="promotion.html">Promotion</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
   </header>
-
   <main>
     <section class="filter-section">
-      <h2>Filter Products</h2>
-      <div class="filter-buttons">
-        <button class="filter-btn active">All</button>
-        <button class="filter-btn">Gaming</button>
-        <button class="filter-btn">Camera</button>
-        <button class="filter-btn">Budget</button>
-      </div>
+      <h2>Our Products</h2>
     </section>
-
     <section class="products-grid">
-      <div class="product-card" data-category="gaming">
+      <div class="product-card">
         <img src="phone-one.png" alt="V-Phone Z Pro" />
         <h3>V-Phone Z Pro</h3>
         <p class="price">Price: Rp. 1.500.000</p>
-        <button onclick="window.location.href='register.html'" class="buy-now-btn">Buy Now</button>
+        <button class="buy-btn" onclick="window.location.href='register.html'">Buy Now</button>
       </div>
-
-      <div class="product-card" data-category="camera">
+      <div class="product-card">
         <img src="camx.png" alt="V-Camera Pro" />
         <h3>V-Camera Pro</h3>
         <p class="price">Price: Rp. 3.500.000</p>
-        <button onclick="window.location.href='register.html'" class="buy-now-btn">Buy Now</button>
+        <button class="buy-btn" onclick="window.location.href='register.html'">Buy Now</button>
       </div>
-
-      <div class="product-card" data-category="budget">
+      <div class="product-card">
         <img src="phone-2.jpeg" alt="V-Phone Lite" />
         <h3>V-Phone Lite</h3>
         <p class="price">Price: Rp. 900.000</p>
-        <button onclick="window.location.href='register.html'" class="buy-now-btn">Buy Now</button>
-      </div>
-
-      <div class="product-card" data-category="budget">
-        <img src="phone-4.png" alt="V-Phone G5" />
-        <h3>V-Phone G5</h3>
-        <p class="price">Price: Rp. 1.200.000</p>
-        <button onclick="window.location.href='register.html'" class="buy-now-btn">Buy Now</button>
-      </div>
-
-      <div class="product-card" data-category="camera">
-        <img src="action-cam.png" alt="V-Action Cam" />
-        <h3>V-Action Cam</h3>
-        <p class="price">Price: Rp. 3.200.000</p>
-        <button onclick="window.location.href='register.html'" class="buy-now-btn">Buy Now</button>
-      </div>
-
-      <div class="product-card" data-category="gaming">
-        <img src="phone-3.webp" alt="V-Phone Max" />
-        <h3>V-Phone Max</h3>
-        <p class="price">Price: Rp. 4.000.000</p>
-        <button onclick="window.location.href='register.html'" class="buy-now-btn">Buy Now</button>
+        <button class="buy-btn" onclick="window.location.href='register.html'">Buy Now</button>
       </div>
     </section>
   </main>
-
   <footer>
     <div class="footer-content">
-      <div class="footer-section footer-left">
+      <div class="footer-section">
         <h3>V-Phone</h3>
         <p>Leading Innovation, Shaping the Future</p>
       </div>
-      <div class="footer-section footer-center">
+      <div class="footer-section">
         <h3>Quick Links</h3>
         <a href="products.html">Products</a>
         <a href="promotion.html">Promotion</a>
         <a href="about.html">About Us</a>
         <a href="register.html">Register</a>
       </div>
-      <div class="footer-section footer-right">
+      <div class="footer-section">
         <h3>Contact</h3>
         <p>Email: support@vphone.com</p>
         <p>Phone: (021) 1234-5678</p>
@@ -102,6 +207,5 @@
     </div>
     <div class="footer-bottom">© 2025 V-Phone. All rights reserved.</div>
   </footer>
-  <script src="products.js"></script>
 </body>
 </html>
