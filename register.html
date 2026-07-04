@@ -6,8 +6,8 @@
   <title>V-Phone | Register</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   
-  <!-- SUNTIKAN STYLE LANGSUNG BIAR KOTAKNYA KELOCK DI TENGAH -->
   <style>
+    /* RESET TOTAL BIAR GAK ACAK-ACAKAN */
     * {
       margin: 0;
       padding: 0;
@@ -23,12 +23,14 @@
       min-height: 100vh;
     }
 
+    /* NAVBAR HEADER */
     header {
       background: linear-gradient(to right, #8a6361, #ab8280);
       padding: 20px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
     }
 
     .logo {
@@ -55,126 +57,130 @@
       border-radius: 5px;
     }
 
-    /* KUNCI UTAMA FORM DI TENGAH NGOTAK */
+    /* KUNCI PAKSA DI TENGAH LAYAR */
     main {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
+      width: 100%;
     }
 
+    /* KOTAK REGISTER MANDIRI */
     .register-card {
-      background-color: #ffffff;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      width: 100%;
-      max-width: 450px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      background-color: #ffffff !important;
+      padding: 40px !important;
+      border-radius: 15px !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+      width: 100% !important;
+      max-width: 450px !important; /* Lebar kotak pas di tengah */
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
     }
 
     .register-card h2 {
-      color: #8a6361;
-      text-align: center;
-      font-size: 26px;
-      margin-bottom: 10px;
+      color: #8a6361 !important;
+      text-align: center !important;
+      font-size: 26px !important;
+      margin-bottom: 10px !important;
     }
 
+    /* FORM LAYOUT */
     .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      width: 100%;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+      width: 100% !important;
     }
 
     .form-group label {
-      font-weight: bold;
-      color: #555;
-      font-size: 14px;
-      text-align: left;
+      font-weight: bold !important;
+      color: #555 !important;
+      font-size: 14px !important;
+      text-align: left !important;
     }
 
     .form-group input {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 14px;
-      outline: none;
-      transition: border-color 0.3s;
+      width: 100% !important;
+      padding: 12px 15px !important;
+      border: 1px solid #ddd !important;
+      border-radius: 8px !important;
+      font-size: 14px !important;
+      outline: none !important;
     }
 
     .form-group input:focus {
-      border-color: #8a6361;
+      border-color: #8a6361 !important;
     }
 
+    /* TOMBOL REGISTER UTAMA */
     .register-btn {
-      background-color: #ab8280;
-      color: white;
-      border: none;
-      padding: 14px;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 10px;
-      transition: background-color 0.3s;
+      background-color: #ab8280 !important;
+      color: white !important;
+      border: none !important;
+      padding: 14px !important;
+      border-radius: 8px !important;
+      font-size: 16px !important;
+      font-weight: bold !important;
+      cursor: pointer !important;
+      width: 100% !important;
+      margin-top: 10px !important;
+      transition: background-color 0.3s !important;
     }
 
     .register-btn:hover {
-      background-color: #8a6361;
+      background-color: #8a6361 !important;
     }
 
+    /* FOOTER */
     footer {
       background-color: #8a6361;
       color: #fff;
       text-align: center;
       padding: 20px;
       font-size: 14px;
+      margin-top: auto;
+      width: 100%;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="header-bg"></div>
-    <div class="header-content">
-      <div class="logo">V-Phone</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="promotion.html">Promotion</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="register.html" class="active">Register</a></li>
-        </ul>
-      </nav>
-    </div>
+    <div class="logo">V-Phone</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="promotion.html">Promotion</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="register.html" class="active">Register</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <!-- KOTAK FORM SEKARANG DI TENGAH -->
+    <!-- KOTAK FORM FIX DI TENGAH -->
     <div class="register-card">
       <h2>Create Your Account</h2>
-      <form id="registerForm">
+      <form id="registerForm" onsubmit="event.preventDefault();">
         <div class="form-group">
-          <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" placeholder="Your full name" required />
+          <label>Full Name</label>
+          <input type="text" placeholder="Your full name" required />
         </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="you@example.com" required />
+        <div class="form-group" style="margin-top: 15px;">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@example.com" required />
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Choose a strong password" required />
+        <div class="form-group" style="margin-top: 15px;">
+          <label>Password</label>
+          <input type="password" placeholder="Choose a strong password" required />
         </div>
-        <div class="form-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <input type="password" id="confirmPassword" placeholder="Repeat your password" required />
+        <div class="form-group" style="margin-top: 15px;">
+          <label>Confirm Password</label>
+          <input type="password" placeholder="Repeat your password" required />
         </div>
         <button type="submit" class="register-btn">Register</button>
       </form>
@@ -182,7 +188,8 @@
   </main>
 
   <footer>
-    <div class="footer-bottom">© 2025 V-Phone. All rights reserved.</div>
+    <div>© 2025 V-Phone. All rights reserved.</div>
   </footer>
+
 </body>
 </html>
