@@ -4,8 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>V-Phone | Register</title>
-  <link rel="stylesheet" href="register.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  
+  <!-- SUNTIKAN STYLE LANGSUNG BIAR KOTAKNYA KELOCK DI TENGAH -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fcebe9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(to right, #8a6361, #ab8280);
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+    }
+
+    .nav-links a.active {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+    /* KUNCI UTAMA FORM DI TENGAH NGOTAK */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .register-card {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 450px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .register-card h2 {
+      color: #8a6361;
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #555;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: #8a6361;
+    }
+
+    .register-btn {
+      background-color: #ab8280;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .register-btn:hover {
+      background-color: #8a6361;
+    }
+
+    footer {
+      background-color: #8a6361;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,19 +144,19 @@
     <div class="header-content">
       <div class="logo">V-Phone</div>
       <nav>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="promotion.html">Promotion</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="register.html">Register</a></li>
+          <li><a href="register.html" class="active">Register</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="register-container">
+  <main>
+    <!-- KOTAK FORM SEKARANG DI TENGAH -->
     <div class="register-card">
       <h2>Create Your Account</h2>
       <form id="registerForm">
@@ -51,26 +182,7 @@
   </main>
 
   <footer>
-    <div class="footer-content">
-      <div class="footer-section footer-left">
-        <h3>V-Phone</h3>
-        <p>Leading Innovation, Shaping the Future</p>
-      </div>
-      <div class="footer-section footer-center">
-        <h3>Quick Links</h3>
-        <a href="products.html">Products</a>
-        <a href="promotion.html">Promotion</a>
-        <a href="about.html">About Us</a>
-        <a href="register.html">Register</a>
-      </div>
-      <div class="footer-section footer-right">
-        <h3>Contact</h3>
-        <p>Email: support@vphone.com</p>
-        <p>Phone: (021) 1234-5678</p>
-      </div>
-    </div>
     <div class="footer-bottom">© 2025 V-Phone. All rights reserved.</div>
   </footer>
-  <script src="register.js"></script>
 </body>
 </html>
