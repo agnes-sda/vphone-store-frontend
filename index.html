@@ -63,24 +63,43 @@
     .slider {
       max-width: 1000px;
       margin: 0 auto 40px auto;
-      position: relative;
-      overflow: hidden;
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
     }
-    .slide img {
+    .slider img {
       width: 100%;
       display: block;
     }
-    .slogan {
+    .recommended-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
       text-align: center;
-      padding: 20px;
-      margin-bottom: 40px;
     }
-    .slogan h1 {
+    .recommended-section h2 {
       color: #8a6361;
+      margin-bottom: 30px;
       font-size: 28px;
-      margin-bottom: 10px;
+    }
+    .grid-home {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .home-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .home-card img {
+      width: 100%;
+      max-width: 220px;
+      height: 240px;
+      object-fit: contain;
+      margin-bottom: 15px;
     }
     footer {
       background-color: #8a6361 !important;
@@ -122,6 +141,9 @@
       font-size: 14px !important;
       color: #fff !important;
     }
+    @media (max-width: 768px) {
+      .grid-home { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -143,11 +165,22 @@
       <p>Discover the latest in mobile technology with V-Phone — more than just a smartphone.</p>
     </div>
     <div class="slider">
-      <div class="slide"><img src="pc-1.png" alt="Gaming Phone" /></div>
+      <img src="pc-1.png" alt="Main Banner" />
     </div>
-    <section class="slogan">
-      <h1>Your Trusted Partner for the Best Smartphones</h1>
-      <p>High performance, stunning camera, and unbeatable prices. V-Phone delivers all.</p>
+    <section class="recommended-section">
+      <h2>Our Top Recommendations</h2>
+      <div class="grid-home">
+        <div class="home-card">
+          <img src="phone-3.webp" alt="V-Phone Alpha" />
+          <h3>V-Phone Alpha</h3>
+          <p style="color:#8a6361; font-weight:bold; margin-top:10px;">Rp 3.499.000</p>
+        </div>
+        <div class="home-card">
+          <img src="phone-5.png" alt="V-Phone Vision" />
+          <h3>V-Phone Vision</h3>
+          <p style="color:#8a6361; font-weight:bold; margin-top:10px;">Rp 4.899.000</p>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
