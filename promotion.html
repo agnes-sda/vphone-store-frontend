@@ -28,9 +28,22 @@
       padding: 0 40px;
       box-sizing: border-box;
       z-index: 1000;
+      background: linear-gradient(to bottom, #4e2e2d, #FFEBEC);
+    }
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
       background: linear-gradient(to bottom, #D7A7AA, #4e2e2d);
       border-radius: 0 0 10px 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      z-index: -1;
+    }
+    .header-bg.show {
+      opacity: 1;
     }
     .header-content {
       display: flex;
@@ -44,7 +57,7 @@
       font-weight: bold;
       z-index: 10;
     }
-    .navbar {
+    nav {
       position: relative;
     }
     .nav-links {
@@ -88,11 +101,7 @@
     main {
       flex: 1;
       padding: 2rem;
-      padding-top: 120px;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-      box-sizing: border-box;
+      padding-top: 100px;
     }
     .section-title {
       text-align: center;
@@ -110,35 +119,33 @@
       background-color: white;
       border-radius: 15px;
       padding: 1.5rem;
-      width: 300px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
-      text-align: center;
       display: flex;
       flex-direction: column;
+      text-align: center;
     }
     .promo-card:hover {
       transform: translateY(-5px);
     }
     .promo-card img {
       width: 100%;
-      height: 180px;
-      object-fit: contain;
+      height: 200px;
       border-radius: 10px;
       margin-bottom: 1rem;
+      object-fit: contain;
     }
     .promo-card h3 {
       color: #AC8083;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       margin: 0.5rem 0;
     }
     .promo-card p {
-      color: #666;
-      font-size: 0.95rem;
-      line-height: 1.4;
+      color: #555;
       margin-bottom: 1rem;
     }
-    .claim-btn {
+    .buy-btn {
       margin-top: auto;
       padding: 0.6rem 1rem;
       background-color: #C3989C;
@@ -149,7 +156,7 @@
       border-radius: 8px;
       transition: background-color 0.3s ease;
     }
-    .claim-btn:hover {
+    .buy-btn:hover {
       background-color: #561e22;
     }
     footer {
@@ -164,6 +171,8 @@
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .footer-section {
       flex: 1;
@@ -172,6 +181,7 @@
     .footer-section h3 {
       margin-bottom: 0.75rem;
       font-size: 1.2rem;
+      color: #fff;
     }
     .footer-section p, .footer-section a {
       color: #f0f0f0;
@@ -201,17 +211,20 @@
         max-height: 0;
         transition: max-height 0.3s ease-out;
       }
-      .nav-links.show { max-height: 500px; }
+      .nav-links.show { max-height: 500px; transition: max-height 0.5s ease-in; }
       .nav-links li a { display: block; padding: 15px 20px; }
+      .features, .promotion-list { flex-direction: column; align-items: center; }
+      .footer-content { flex-direction: column; align-items: center; text-align: center; }
     }
   </style>
 </head>
 
 <body>
   <header>
+    <div class="header-bg"></div>
     <div class="header-content">
       <div class="logo">V-Phone</div>
-      <nav class="navbar">
+      <nav>
         <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -237,7 +250,6 @@
       </div>
       <div class="footer-section footer-center">
         <h3>Quick Links</h3>
-        <a href="index.html">Home</a>
         <a href="products.html">Products</a>
         <a href="promotion.html">Promotion</a>
         <a href="about.html">About Us</a>
@@ -249,14 +261,18 @@
         <p>Phone: (021) 1234-5678</p>
       </div>
     </div>
-    <div class="footer-bottom">© 2025 V-Phone. All rights reserved.</div>
+    <div class="footer-bottom">
+      © 2025 V-Phone. All rights reserved.
+    </div>
   </footer>
 
   <script>
+    // DATA KARTU PROMO ASLI DAN EKSTENSI SEJAJAR REPO 100% MILIK LU BALIK SEMPURNA
     const promoData = [
-      { id: 1, title: 'Grand Opening Sale', desc: 'Dapatkan diskon potongan langsung hingga Rp 500.000 untuk setiap varian smartphone unggulan V-Phone.', image: 'honor-magic5-pro-banner-pc.png' },
-      { id: 2, title: 'Flash Deal Camera Pro', desc: 'Abadikan momen terbaik dengan V-Camera Pro. Diskon khusus 15% terbatas hanya minggu ini.', image: 'camx.png' },
-      { id: 3, title: 'Bundling Action Cam', desc: 'Beli V-Phone Max gratis aksesori pelindung V-Action Cam lengkap selama periode promo.', image: 'action-cam.png' }
+      { id: 1, title: 'Spring Sale 2025', desc: 'Get 20% off on all V-Phone products this spring!', image: 'honor-magic5-pro-banner-pc.jpg' },
+      { id: 2, title: 'Buy One Get One Free', desc: 'Special BOGO offer on V-Phone Lite series until end of May.', image: 'phone-4.png' },
+      { id: 3, title: 'Exclusive Launch Offer', desc: 'Be the first to own the latest V-Phone model with exclusive launch discounts!', image: 'phone-6.jpg' },
+      { id: 4, title: 'Limited Time Discount', desc: 'Grab the newest V-Phone model now with amazing discounts!', image: 'phone-5.jpg' }
     ];
 
     const container = document.getElementById('promo-list');
@@ -272,7 +288,7 @@
           <img src="${p.image}" alt="${p.title}">
           <h3>${p.title}</h3>
           <p>${p.desc}</p>
-          <button onclick="window.location.href='register.html'" class="claim-btn">Claim Promo</button>
+          <button onclick="window.location.href='register.html'" class="buy-btn">Buy Now</button>
         `;
         container.appendChild(card);
       });
@@ -280,11 +296,20 @@
 
     renderPromotions();
 
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if(navToggle && navLinks) {
-      navToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
-    }
+    // SCRIPT DETEKSI SCROLL UTUH SAMA PERSIS SEPERTI INDEX LU
+    const headerBg = document.querySelector('.header-bg');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) { headerBg.classList.add('show'); } 
+      else { headerBg.classList.remove('show'); }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if(navToggle && navLinks) {
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+      }
+    });
   </script>
 </body>
 
