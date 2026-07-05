@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>V-Phone | Home</title>
+  <title>V-Phone | Promotion</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
     body {
@@ -97,7 +98,62 @@
       cursor: pointer;
       z-index: 20;
     }
-footer {
+
+    /* FIX LAYOUT MAIN & KARTU PROMOSI BIAR SEJAJAR DAN RAPI */
+    main {
+      flex: 1;
+      padding: 2rem;
+      padding-top: 120px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .section-title {
+      text-align: center;
+      color: #AC8083;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .promotion-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .promo-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .promo-card:hover {
+      transform: translateY(-5px);
+    }
+    .promo-card img {
+      width: 100%;
+      height: 160px;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+    .promo-card h3 {
+      color: #AC8083;
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    .promo-card p {
+      color: #555;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer {
       padding: 40px;
       background: linear-gradient(to bottom, #AC8083, #4e2e2d);
       color: white;
@@ -151,7 +207,6 @@ footer {
       }
       .nav-links.show { max-height: 500px; transition: max-height 0.5s ease-in; }
       .nav-links li a { display: block; padding: 15px 20px; }
-      .features, .products { flex-direction: column; align-items: center; }
       .footer-content { flex-direction: column; align-items: center; text-align: center; }
     }
   </style>
@@ -165,9 +220,9 @@ footer {
       <nav>
         <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="promotion.html">Promotion</a></li>
+          <li><a href="promotion.html" class="active">Promotion</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="register.html">Register</a></li>
         </ul>
@@ -178,24 +233,24 @@ footer {
   <main>
     <h2 class="section-title">Our Promotions</h2>
     <section class="promotion-list">
-      <!-- Promo cards akan diisi oleh JS -->
-    </section>
+      </section>
   </main>
 
   <footer>
     <div class="footer-content">
-      <div class="footer-section footer-left">
+      <div class="footer-section">
         <h3>V-Phone</h3>
         <p>Leading Innovation, Shaping the Future</p>
       </div>
-      <div class="footer-section footer-center">
+      <div class="footer-section">
         <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
         <a href="products.html">Products</a>
         <a href="promotion.html">Promotion</a>
         <a href="about.html">About Us</a>
         <a href="register.html">Register</a>
       </div>
-      <div class="footer-section footer-right">
+      <div class="footer-section">
         <h3>Contact</h3>
         <p>Email: support@vphone.com</p>
         <p>Phone: (021) 1234-5678</p>
@@ -207,6 +262,21 @@ footer {
   </footer>
 
   <script src="promotion.js"></script>
+  <script>
+    const headerBg = document.querySelector('.header-bg');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) { headerBg.classList.add('show'); } 
+      else { headerBg.classList.remove('show'); }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if(navToggle && navLinks) {
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+      }
+    });
+  </script>
 </body>
 
 </html>
