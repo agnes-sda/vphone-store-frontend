@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>V-Phone | Home</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    html, body {
+    body {
       height: 100%;
       margin: 0;
       font-family: 'Cormorant Garamond', serif;
@@ -77,6 +74,7 @@
       padding: 10px 20px;
       border-radius: 5px;
       transition: background-color 0.3s ease;
+      cursor: pointer;
       display: block;
     }
     .nav-links a.active {
@@ -142,7 +140,8 @@
     .slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
       border-radius: 20px;
       display: block;
     }
@@ -321,6 +320,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="header-bg"></div>
@@ -344,53 +344,66 @@
       <h2>Leading Innovation, Shaping the Future</h2>
       <p>Discover the latest in mobile technology with V-Phone — more than just a smartphone.</p>
     </div>
-    <!-- Slider -->
+
     <div class="slider">
       <div class="slide active">
-        <img src="image/pc-1.png" alt="Gaming Phone" />
+        <img src="projectt hci/image/pc-1.png" alt="Gaming Phone" />
       </div>
       <div class="slide">
-        <img src="image/Honor_Magic6_Pro.png" alt="Camera Phone" />
+        <img src="projectt hci/image/Honor_Magic6_Pro.png" alt="Camera Phone" />
       </div>
       <div class="slide">
-        <img src="image/honor-magic5-pro-banner-pc.png" alt="Budget Phone" />
+        <img src="projectt hci/image/honor-magic5-pro-banner-pc.png" alt="Budget Phone" />
       </div>
-
       <div class="slider-controls">
         <button id="prev">&#10094;</button>
         <button id="next">&#10095;</button>
       </div>
     </div>
+
     <section class="slogan">
       <h1>Your Trusted Partner for the Best Smartphones</h1>
       <p>High performance, stunning camera, and unbeatable prices. V-Phone delivers all.</p>
     </section>
+
     <section class="why-choose-us">
       <h2>Why Choose V-Phone?</h2>
       <div class="features">
-        <div class="feature"><i class="fas fa-gamepad"></i><h3>Gaming Performance</h3><p>Blazing-fast smartphones perfect for gamers on the go.</p></div>
-        <div class="feature"><i class="fas fa-camera"></i><h3>Camera Excellence</h3><p>Capture life's best moments in stunning detail.</p></div>
-        <div class="feature"><i class="fas fa-tags"></i><h3>Affordable Price</h3><p>Best features without breaking the bank.</p></div>
+        <div class="feature">
+          <i class="fas fa-gamepad"></i>
+          <h3>Gaming Performance</h3>
+          <p>Blazing-fast smartphones perfect for gamers on the go.</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-camera"></i>
+          <h3>Camera Excellence</h3>
+          <p>Capture life's best moments in stunning detail.</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-tags"></i>
+          <h3>Affordable Price</h3>
+          <p>Best features without breaking the bank.</p>
+        </div>
       </div>
     </section>
-    <!-- Recommended Products -->
+
     <section class="recommended">
       <h2>Our Recommendations</h2>
       <div class="products">
         <div class="product">
-          <img src="image/phone-3.webp" alt="Smartphone A" />
+          <img src="projectt hci/image/phone-3.webp" alt="Smartphone A" />
           <h3>V-Phone Alpha</h3>
           <p>Rp 3.499.000</p>
           <button onclick="window.location.href='register.html'" class="buy-btn">Buy Now</button>
         </div>
         <div class="product">
-          <img src="image/phone-5.png" alt="Smartphone B" />
+          <img src="projectt hci/image/phone-5.png" alt="Smartphone B" />
           <h3>V-Phone Vision</h3>
           <p>Rp 4.899.000</p>
           <button onclick="window.location.href='register.html'" class="buy-btn">Buy Now</button>
         </div>
         <div class="product">
-          <img src="image/phone-6.png" alt="Smartphone C" />
+          <img src="projectt hci/image/phone-6.png" alt="Smartphone C" />
           <h3>V-Phone Nova</h3>
           <p>Rp 2.999.000</p>
           <button onclick="window.location.href='register.html'" class="buy-btn">Buy Now</button>
@@ -401,9 +414,22 @@
 
   <footer>
     <div class="footer-content">
-      <div class="footer-section"><h3>V-Phone</h3><p>Leading Innovation, Shaping the Future</p></div>
-      <div class="footer-section"><h3>Quick Links</h3><a href="products.html">Products</a><a href="promotion.html">Promotion</a><a href="about.html">About Us</a><a href="register.html">Register</a></div>
-      <div class="footer-section"><h3>Contact</h3><p>Email: support@vphone.com</p><p>Phone: (021) 1234-5678</p></div>
+      <div class="footer-section">
+        <h3>V-Phone</h3>
+        <p>Leading Innovation, Shaping the Future</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="products.html">Products</a>
+        <a href="promotion.html">Promotion</a>
+        <a href="about.html">About Us</a>
+        <a href="register.html">Register</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: support@vphone.com</p>
+        <p>Phone: (021) 1234-5678</p>
+      </div>
     </div>
     <div class="footer-bottom">© 2025 V-Phone. All rights reserved.</div>
   </footer>
@@ -413,18 +439,37 @@
     const prevBtn = document.getElementById('prev');
     const nextBtn = document.getElementById('next');
     let currentSlide = 0;
-    function showSlide(index) { slides.forEach((slide, i) => { slide.classList.toggle('active', i === index); }); }
-    function nextSlide() { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); }
-    function prevSlide() { currentSlide = (currentSlide - 1 + slides.length) % slides.length; showSlide(currentSlide); }
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => { slide.classList.toggle('active', i === index); });
+    }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
     nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
     prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+
     let autoSlideInterval = setInterval(nextSlide, 4000);
-    function resetAutoSlide() { clearInterval(autoSlideInterval); autoSlideInterval = setInterval(nextSlide, 4000); }
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(nextSlide, 4000);
+    }
+
     const headerBg = document.querySelector('.header-bg');
-    window.addEventListener('scroll', () => { if (window.scrollY > 100) { headerBg.classList.add('show'); } else { headerBg.classList.remove('show'); } });
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) { headerBg.classList.add('show'); } 
+      else { headerBg.classList.remove('show'); }
+    });
+
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     navToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
   </script>
 </body>
+
 </html>
