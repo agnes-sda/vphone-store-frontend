@@ -28,7 +28,6 @@
       padding: 0 40px;
       box-sizing: border-box;
       z-index: 1000;
-      /* LANGSUNG KUNCI PAKE NAVBAR COKELAT GRADASI MEWAH DARI AWAL */
       background: linear-gradient(to bottom, #D7A7AA, #4e2e2d);
       border-radius: 0 0 10px 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -101,8 +100,6 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
-    
-    /* STYLING CARD PROMOSI BIAR RAPI DAN CAKEP */
     .promotion-list {
       display: flex;
       flex-wrap: wrap;
@@ -155,7 +152,6 @@
     .claim-btn:hover {
       background-color: #561e22;
     }
-
     footer {
       padding: 40px;
       background: linear-gradient(to bottom, #AC8083, #4e2e2d);
@@ -230,7 +226,6 @@
 
   <main>
     <h2 class="section-title">Our Promotions</h2>
-    
     <section class="promotion-list" id="promo-list"></section>
   </main>
 
@@ -258,7 +253,6 @@
   </footer>
 
   <script>
-    // DATA PROMO DENGAN LINK FOTO ASLI DI GITHUB LO BIAR JALAN OTOMATIS
     const promoData = [
       { id: 1, title: 'Grand Opening Sale', desc: 'Dapatkan diskon potongan langsung hingga Rp 500.000 untuk setiap varian smartphone unggulan V-Phone.', image: 'honor-magic5-pro-banner-pc.png' },
       { id: 2, title: 'Flash Deal Camera Pro', desc: 'Abadikan momen terbaik dengan V-Camera Pro. Diskon khusus 15% terbatas hanya minggu ini.', image: 'camx.png' },
@@ -284,7 +278,6 @@
       });
     }
 
-    // Panggil render data
     renderPromotions();
 
     const navToggle = document.querySelector('.nav-toggle');
