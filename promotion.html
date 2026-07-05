@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>V-Phone | Promotion</title>
+  <title>V-Phone Promotion</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
     body {
@@ -146,6 +146,20 @@
       margin-bottom: 1rem;
       font-size: 0.95rem;
     }
+    .claim-btn, .buy-btn {
+      margin-top: auto;
+      padding: 0.6rem 1rem;
+      background-color: #C3989C;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .claim-btn:hover, .buy-btn:hover {
+      background-color: #561e22;
+    }
     footer {
       padding: 40px;
       background: linear-gradient(to bottom, #AC8083, #4e2e2d);
@@ -211,7 +225,7 @@
     <div class="header-bg"></div>
     <div class="header-content">
       <div class="logo">V-Phone</div>
-      <nav>
+      <nav class="navbar">
         <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -226,31 +240,7 @@
 
   <main>
     <h2 class="section-title">Our Promotions</h2>
-    <section class="promotion-list">
-      <div class="promo-card">
-        <img src="photo-1511707171634-5f897ff02aa9" alt="Spring Sale 2025">
-        <h3>Spring Sale 2025</h3>
-        <p>Get 20% off on all V-Phone products this spring!</p>
-      </div>
-
-      <div class="promo-card">
-        <img src="photo-1526045612212-70caf35c14df" alt="Buy One Get One Free">
-        <h3>Buy One Get One Free</h3>
-        <p>Special BOGO offer on V-Phone Lite series until end of May.</p>
-      </div>
-
-      <div class="promo-card">
-        <img src="photo-1598327105666-5b89351aff97" alt="Exclusive Launch Offer">
-        <h3>Exclusive Launch Offer</h3>
-        <p>Be the first to own the latest V-Phone model with exclusive launch discounts!</p>
-      </div>
-
-      <div class="promo-card">
-        <img src="honor-magic5-pro-banner-pc.png" alt="Limited Time Discount">
-        <h3>Limited Time Discount</h3>
-        <p>Grab the newest V-Phone model now with amazing discounts!</p>
-      </div>
-    </section>
+    <section class="promotion-list"></section>
   </main>
 
   <footer>
@@ -277,6 +267,7 @@
     </div>
   </footer>
 
+  <script src="promotion.js"></script>
   <script>
     const headerBg = document.querySelector('.header-bg');
     window.addEventListener('scroll', () => {
