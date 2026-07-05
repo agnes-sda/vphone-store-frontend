@@ -114,18 +114,23 @@
       margin-bottom: 2rem;
     }
 
-    /* PAKSA SEMUA ELEMEN DI DALAM PROMOTION LIST KE TENGAH DAN BERI BG PUTIH */
     .promotion-list {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
-      text-align: center;
+      text-align: center !important; 
     }
     .promotion-list * {
       text-align: center !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .promotion-list p {
+      max-width: 90%;
+      margin: 0 auto !important;
     }
     .promotion-list div {
       background-color: white;
