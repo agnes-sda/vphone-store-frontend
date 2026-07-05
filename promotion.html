@@ -144,6 +144,7 @@
     .promo-card p {
       color: #555;
       margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
     .buy-btn {
       margin-top: auto;
@@ -267,12 +268,11 @@
   </footer>
 
   <script>
-    // DATA KARTU PROMO ASLI DAN EKSTENSI SEJAJAR REPO 100% MILIK LU BALIK SEMPURNA
     const promoData = [
-      { id: 1, title: 'Spring Sale 2025', desc: 'Get 20% off on all V-Phone products this spring!', image: 'honor-magic5-pro-banner-pc.jpg' },
-      { id: 2, title: 'Buy One Get One Free', desc: 'Special BOGO offer on V-Phone Lite series until end of May.', image: 'phone-4.png' },
-      { id: 3, title: 'Exclusive Launch Offer', desc: 'Be the first to own the latest V-Phone model with exclusive launch discounts!', image: 'phone-6.jpg' },
-      { id: 4, title: 'Limited Time Discount', desc: 'Grab the newest V-Phone model now with amazing discounts!', image: 'phone-5.jpg' }
+      { id: 1, title: 'Spring Sale 2025', desc: 'Get 20% off on all V-Phone products this spring!', image: 'photo-1511707171634-5f897ff02aa9' },
+      { id: 2, title: 'Buy One Get One Free', desc: 'Special BOGO offer on V-Phone Lite series until end of May.', image: 'photo-1526045612212-70caf35c14df' },
+      { id: 3, title: 'Exclusive Launch Offer', desc: 'Be the first to own the latest V-Phone model with exclusive launch discounts!', image: 'photo-1598327105666-5b89351aff97' },
+      { id: 4, title: 'Limited Time Discount', desc: 'Grab the newest V-Phone model now with amazing discounts!', image: 'honor-magic5-pro-banner-pc.png' }
     ];
 
     const container = document.getElementById('promo-list');
@@ -296,7 +296,6 @@
 
     renderPromotions();
 
-    // SCRIPT DETEKSI SCROLL UTUH SAMA PERSIS SEPERTI INDEX LU
     const headerBg = document.querySelector('.header-bg');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 100) { headerBg.classList.add('show'); } 
