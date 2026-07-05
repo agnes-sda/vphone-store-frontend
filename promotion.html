@@ -114,23 +114,12 @@
       margin-bottom: 2rem;
     }
 
+    /* FIX LAYOUT: CARD BERJEJER RAPI DAN BACKGROUND KOTAK PUTIH */
     .promotion-list {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
-      text-align: center !important; 
-    }
-    .promotion-list * {
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-    .promotion-list p {
-      max-width: 90%;
-      margin: 0 auto !important;
     }
     .promotion-list div {
       background-color: white;
@@ -142,8 +131,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       box-sizing: border-box;
+      text-align: center;
     }
     .promotion-list div:hover {
       transform: translateY(-5px);
@@ -155,6 +145,15 @@
       margin-bottom: 1rem;
       object-fit: contain;
     }
+    
+    /* PENGATURAN TEKS: FORCE SEMUA STRUKTUR DAN ELEMEN DI DALAMNYA RATA TENGAH */
+    .promotion-list div h3,
+    .promotion-list div p,
+    .promotion-list div * {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
     .promotion-list div h3 {
       color: #AC8083;
       font-size: 1.4rem;
@@ -165,6 +164,7 @@
       margin-bottom: 1rem !important;
       font-size: 0.95rem;
       line-height: 1.4;
+      max-width: 90%;
     }
 
     footer {
@@ -246,8 +246,7 @@
 
   <main>
     <h2 class="section-title">Our Promotions</h2>
-    <section class="promotion-list">
-      </section>
+    <section class="promotion-list"></section>
   </main>
 
   <footer>
