@@ -28,6 +28,7 @@
       padding: 0 40px;
       box-sizing: border-box;
       z-index: 1000;
+      /* LANGSUNG KUNCI PAKE NAVBAR COKELAT GRADASI MEWAH DARI AWAL */
       background: linear-gradient(to bottom, #D7A7AA, #4e2e2d);
       border-radius: 0 0 10px 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -43,6 +44,9 @@
       font-size: 2rem;
       font-weight: bold;
       z-index: 10;
+    }
+    .navbar {
+      position: relative;
     }
     .nav-links {
       list-style: none;
@@ -91,30 +95,67 @@
       width: 100%;
       box-sizing: border-box;
     }
-    .promo-title {
+    .section-title {
       text-align: center;
       color: #AC8083;
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
     
-    /* Area styling konten promosi lo biar rapi */
-    .promo-container {
+    /* STYLING CARD PROMOSI BIAR RAPI DAN CAKEP */
+    .promotion-list {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      text-align: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
     .promo-card {
-      background: white;
-      padding: 30px;
+      background-color: white;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      max-width: 600px;
-      width: 100%;
+      padding: 1.5rem;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
     }
-    
+    .promo-card:hover {
+      transform: translateY(-5px);
+    }
+    .promo-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .promo-card h3 {
+      color: #AC8083;
+      font-size: 1.4rem;
+      margin: 0.5rem 0;
+    }
+    .promo-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    .claim-btn {
+      margin-top: auto;
+      padding: 0.6rem 1rem;
+      background-color: #C3989C;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .claim-btn:hover {
+      background-color: #561e22;
+    }
+
     footer {
       padding: 40px;
       background: linear-gradient(to bottom, #AC8083, #4e2e2d);
@@ -174,7 +215,7 @@
   <header>
     <div class="header-content">
       <div class="logo">V-Phone</div>
-      <nav>
+      <nav class="navbar">
         <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -188,27 +229,64 @@
   </header>
 
   <main>
-    <h2 class="promo-title">Special Promotions</h2>
+    <h2 class="section-title">Our Promotions</h2>
     
-    <div class="promo-container">
-      <div class="promo-card">
-        <h3>Grand Opening Sale!</h3>
-        <p>Dapatkan potongan harga langsung hingga Rp 500.000 untuk setiap pembelian varian V-Phone Alpha atau Vision minggu ini.</p>
-      </div>
-    </div>
-    
+    <section class="promotion-list" id="promo-list"></section>
   </main>
 
   <footer>
     <div class="footer-content">
-      <div class="footer-section"><h3>V-Phone</h3><p>Leading Innovation, Shaping the Future</p></div>
-      <div class="footer-section"><h3>Quick Links</h3><a href="index.html">Home</a><a href="products.html">Products</a><a href="promotion.html">Promotion</a><a href="about.html">About Us</a><a href="register.html">Register</a></div>
-      <div class="footer-section"><h3>Contact</h3><p>Email: support@vphone.com</p><p>Phone: (021) 1234-5678</p></div>
+      <div class="footer-section footer-left">
+        <h3>V-Phone</h3>
+        <p>Leading Innovation, Shaping the Future</p>
+      </div>
+      <div class="footer-section footer-center">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="promotion.html">Promotion</a>
+        <a href="about.html">About Us</a>
+        <a href="register.html">Register</a>
+      </div>
+      <div class="footer-section footer-right">
+        <h3>Contact</h3>
+        <p>Email: support@vphone.com</p>
+        <p>Phone: (021) 1234-5678</p>
+      </div>
     </div>
     <div class="footer-bottom">© 2025 V-Phone. All rights reserved.</div>
   </footer>
 
   <script>
+    // DATA PROMO DENGAN LINK FOTO ASLI DI GITHUB LO BIAR JALAN OTOMATIS
+    const promoData = [
+      { id: 1, title: 'Grand Opening Sale', desc: 'Dapatkan diskon potongan langsung hingga Rp 500.000 untuk setiap varian smartphone unggulan V-Phone.', image: 'honor-magic5-pro-banner-pc.png' },
+      { id: 2, title: 'Flash Deal Camera Pro', desc: 'Abadikan momen terbaik dengan V-Camera Pro. Diskon khusus 15% terbatas hanya minggu ini.', image: 'camx.png' },
+      { id: 3, title: 'Bundling Action Cam', desc: 'Beli V-Phone Max gratis aksesori pelindung V-Action Cam lengkap selama periode promo.', image: 'action-cam.png' }
+    ];
+
+    const container = document.getElementById('promo-list');
+
+    function renderPromotions() {
+      if(!container) return;
+      container.innerHTML = '';
+      
+      promoData.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'promo-card';
+        card.innerHTML = `
+          <img src="${p.image}" alt="${p.title}">
+          <h3>${p.title}</h3>
+          <p>${p.desc}</p>
+          <button onclick="window.location.href='register.html'" class="claim-btn">Claim Promo</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Panggil render data
+    renderPromotions();
+
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     if(navToggle && navLinks) {
@@ -216,4 +294,5 @@
     }
   </script>
 </body>
+
 </html>
