@@ -146,20 +146,6 @@
       margin-bottom: 1rem;
       font-size: 0.95rem;
     }
-    .buy-btn {
-      margin-top: auto;
-      padding: 0.6rem 1rem;
-      background-color: #C3989C;
-      border: none;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-    .buy-btn:hover {
-      background-color: #561e22;
-    }
     footer {
       padding: 40px;
       background: linear-gradient(to bottom, #AC8083, #4e2e2d);
@@ -240,7 +226,31 @@
 
   <main>
     <h2 class="section-title">Our Promotions</h2>
-    <section class="promotion-list" id="promo-list"></section>
+    <section class="promotion-list">
+      <div class="promo-card">
+        <img src="photo-1511707171634-5f897ff02aa9" alt="Spring Sale 2025">
+        <h3>Spring Sale 2025</h3>
+        <p>Get 20% off on all V-Phone products this spring!</p>
+      </div>
+
+      <div class="promo-card">
+        <img src="photo-1526045612212-70caf35c14df" alt="Buy One Get One Free">
+        <h3>Buy One Get One Free</h3>
+        <p>Special BOGO offer on V-Phone Lite series until end of May.</p>
+      </div>
+
+      <div class="promo-card">
+        <img src="photo-1598327105666-5b89351aff97" alt="Exclusive Launch Offer">
+        <h3>Exclusive Launch Offer</h3>
+        <p>Be the first to own the latest V-Phone model with exclusive launch discounts!</p>
+      </div>
+
+      <div class="promo-card">
+        <img src="honor-magic5-pro-banner-pc.png" alt="Limited Time Discount">
+        <h3>Limited Time Discount</h3>
+        <p>Grab the newest V-Phone model now with amazing discounts!</p>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -268,34 +278,6 @@
   </footer>
 
   <script>
-    const promoData = [
-      { id: 1, title: 'Spring Sale 2025', desc: 'Get 20% off on all V-Phone products this spring!', image: 'honor-magic5-pro-banner-pc.png' },
-      { id: 2, title: 'Buy One Get One Free', desc: 'Special BOGO offer on V-Phone Lite series until end of May.', image: 'photo-1511707171634-5f897ff02aa9' },
-      { id: 3, title: 'Exclusive Launch Offer', desc: 'Be the first to own the latest V-Phone model with exclusive launch discounts!', image: 'photo-1526045612212-70caf35c14df' },
-      { id: 4, title: 'Limited Time Discount', desc: 'Grab the newest V-Phone model now with amazing discounts!', image: 'photo-1598327105666-5b89351aff97' }
-    ];
-
-    const container = document.getElementById('promo-list');
-
-    function renderPromotions() {
-      if(!container) return;
-      container.innerHTML = '';
-      
-      promoData.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'promo-card';
-        card.innerHTML = `
-          <img src="${p.image}" alt="${p.title}">
-          <h3>${p.title}</h3>
-          <p>${p.desc}</p>
-          <button onclick="window.location.href='register.html'" class="buy-btn">Buy Now</button>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    renderPromotions();
-
     const headerBg = document.querySelector('.header-bg');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 100) { headerBg.classList.add('show'); } 
