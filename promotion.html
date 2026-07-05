@@ -44,9 +44,6 @@
       font-weight: bold;
       z-index: 10;
     }
-    nav {
-      position: relative;
-    }
     .nav-links {
       list-style: none;
       display: flex;
@@ -100,6 +97,24 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
+    
+    /* Area styling konten promosi lo biar rapi */
+    .promo-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
+    .promo-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      max-width: 600px;
+      width: 100%;
+    }
+    
     footer {
       padding: 40px;
       background: linear-gradient(to bottom, #AC8083, #4e2e2d);
@@ -174,6 +189,14 @@
 
   <main>
     <h2 class="promo-title">Special Promotions</h2>
+    
+    <div class="promo-container">
+      <div class="promo-card">
+        <h3>Grand Opening Sale!</h3>
+        <p>Dapatkan potongan harga langsung hingga Rp 500.000 untuk setiap pembelian varian V-Phone Alpha atau Vision minggu ini.</p>
+      </div>
+    </div>
+    
   </main>
 
   <footer>
