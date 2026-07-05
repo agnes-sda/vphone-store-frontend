@@ -109,13 +109,13 @@
       color: #AC8083;
       margin-bottom: 1rem;
     }
-    .filter-buttons {
+    .filters {
       display: flex;
       justify-content: center;
       gap: 10px;
       flex-wrap: wrap;
     }
-    .filter-btn {
+    .filters button {
       padding: 0.5rem 1.5rem;
       background-color: #C3989C;
       border: none;
@@ -125,10 +125,10 @@
       border-radius: 20px;
       transition: background-color 0.3s ease;
     }
-    .filter-btn.active, .filter-btn:hover {
+    .filters button.active, .filters button:hover {
       background-color: #561e22;
     }
-    .products {
+    .product-list {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
@@ -139,8 +139,8 @@
     .product {
       background-color: white;
       border-radius: 15px;
-      padding: 1.5rem;
-      width: 280px;
+      padding: 1rem;
+      width: 250px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
       display: flex;
@@ -159,12 +159,12 @@
     }
     .product h3 {
       color: #AC8083;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin: 0.5rem 0;
     }
     .product p {
-      font-size: 1rem;
-      color: #555;
+      font-weight: bold;
+      color: #333;
       margin-bottom: 1rem;
     }
     .buy-btn {
@@ -259,16 +259,15 @@
   <main>
     <section class="filter-section">
       <h2>Filter Products</h2>
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="gaming">Gaming</button>
-        <button class="filter-btn" data-filter="camera">Camera</button>
-        <button class="filter-btn" data-filter="budget">Budget</button>
+      <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="gaming">Gaming</button>
+        <button data-filter="camera">Camera</button>
+        <button data-filter="budget">Budget</button>
       </div>
     </section>
 
-    <div class="products" id="product-container">
-      </div>
+    <section class="product-list" id="product-list"></section>
   </main>
 
   <footer>
@@ -281,20 +280,21 @@
   </footer>
 
   <script>
-    // PERBAIKAN URUTAN DAN EKSTENSI MUTLAK SESUAI CONSOLE EROR LU
+    // DATA DENGAN NAMA FILE DAN EKSTENSI BENAR SESUAI ISI UTAMA GITHUB LO
     const productData = [
-      { id: 1, name: 'V-Phone Z Pro', category: 'gaming', price: 'Rp. 1.500.000', image: './phone-2.jpeg' },
-      { id: 2, name: 'V-Camera Pro', category: 'camera', price: 'Rp. 3.500.000', image: './camx.jpg' },
-      { id: 3, name: 'V-Phone Lite', category: 'budget', price: 'Rp. 900.000', image: './phone-3.webp' },
-      { id: 4, name: 'V-Phone G5', category: 'gaming', price: 'Rp. 1.200.000', image: './phone-4.png' },
-      { id: 5, name: 'V-Action Cam', category: 'camera', price: 'Rp. 3.200.000', image: './action-cam.jpg' },
-      { id: 6, name: 'V-Phone Max', category: 'budget', price: 'Rp. 4.000.000', image: './phone-5.jpg' }
+      { id: 1, name: 'V-Phone Z Pro', category: 'gaming', price: 'Rp. 1.500.000', image: 'phone-2.jpeg' },
+      { id: 2, name: 'V-Camera Pro', category: 'camera', price: 'Rp. 3.500.000', image: 'camx.png' },
+      { id: 3, name: 'V-Phone Lite', category: 'budget', price: 'Rp. 900.000', image: 'phone-one.png' },
+      { id: 4, name: 'V-Phone G5', category: 'gaming', price: 'Rp. 1.200.000', image: 'phone-4.png' },
+      { id: 5, name: 'V-Action Cam', category: 'camera', price: 'Rp. 3.200.000', image: 'action-cam.png' },
+      { id: 6, name: 'V-Phone Max', category: 'budget', price: 'Rp. 4.000.000', image: 'phone-6.png' }
     ];
 
-    const container = document.getElementById('product-container');
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    const container = document.getElementById('product-list');
+    const filterBtns = document.querySelectorAll('.filters button');
 
     function renderProducts(filter) {
+      if(!container) return;
       container.innerHTML = '';
       const filtered = filter === 'all' ? productData : productData.filter(p => p.category === filter);
       
@@ -329,7 +329,10 @@
 
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+    if(navToggle && navLinks) {
+      navToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+    }
   </script>
 </body>
+
 </html>
