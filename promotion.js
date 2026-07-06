@@ -60,6 +60,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navToggle.addEventListener('click', () => {
     navLinks.classList.toggle('show');
-    navToggle.classList.toggle('active');
   });
 });
