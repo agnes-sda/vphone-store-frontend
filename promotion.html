@@ -226,10 +226,27 @@
       .nav-links.show { max-height: 500px; transition: max-height 0.5s ease-in; }
       .nav-links li a { display: block; padding: 15px 20px; }
 
-      .footer-content { 
+      .promotion-list {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+      }
+      .promotion-list div {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto 1rem auto !important;
+      }
+
+      footer, .footer-content, .footer-section, .footer-section * {
         flex-direction: column !important; 
         align-items: center !important; 
-        text-align: center !important; 
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+      }
+      .footer-section {
+        margin-bottom: 1.5rem !important;
       }
     }
   </style>
