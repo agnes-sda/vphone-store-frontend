@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>V-Phone | Promotion</title>
 
     <link rel="stylesheet" href="promotion.css">
@@ -47,12 +46,10 @@
 
     <main>
 
-        <h1 class="section-title">
-            Our Promotions
-        </h1>
+        <h1 class="section-title">Our Promotions</h1>
 
         <section class="promotion-list" id="promotion-list">
-            <!-- promotion.js akan mengisi card di sini -->
+            <!-- promotion.js -->
         </section>
 
     </main>
@@ -63,14 +60,10 @@
 
             <div class="footer-section">
                 <h3>V-Phone</h3>
-
-                <p>
-                    Leading Innovation, Shaping the Future.
-                </p>
+                <p>Leading Innovation, Shaping the Future.</p>
             </div>
 
             <div class="footer-section">
-
                 <h3>Quick Links</h3>
 
                 <a href="index.html">Home</a>
@@ -78,27 +71,15 @@
                 <a href="promotion.html">Promotion</a>
                 <a href="about.html">About Us</a>
                 <a href="register.html">Register</a>
-
             </div>
 
             <div class="footer-section">
 
                 <h3>Contact Us</h3>
 
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    support@vphone.com
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-phone"></i>
-                    (+62) 21-1234-5678
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Jakarta, Indonesia
-                </p>
+                <p><i class="fa-solid fa-envelope"></i> support@vphone.com</p>
+                <p><i class="fa-solid fa-phone"></i> (+62) 21-1234-5678</p>
+                <p><i class="fa-solid fa-location-dot"></i> Jakarta, Indonesia</p>
 
             </div>
 
@@ -111,6 +92,26 @@
     </footer>
 
     <script src="promotion.js"></script>
+
+    <script>
+        const headerBg = document.querySelector('.header-bg');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                headerBg.classList.add('show');
+            } else {
+                headerBg.classList.remove('show');
+            }
+        });
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            navToggle.classList.toggle('active');
+        });
+    </script>
 
 </body>
 
