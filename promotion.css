@@ -56,15 +56,13 @@ header {
   justify-content:space-between;
   align-items:center;
   width:100%;
-  max-width:1200px;
-  margin:0 auto;
-  color:white;
+  padding:0 40px;
 }
 
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  z-index: 10;
+.logo{
+    font-size:3rem;
+    font-weight:700;
+    color:#fff;
 }
 
 nav ul {
@@ -244,16 +242,13 @@ nav {
   padding: 0;
 }
 
-.nav-links a {
-  color: #fff;
-  font-size:20px;
-  font-weight:700;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color .3s ease;
-  cursor: pointer;
-  display: block;
+.nav-links a{
+    color:#fff;
+    font-size:20px;
+    font-weight:700;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
 }
 
 .nav-links a.active {
