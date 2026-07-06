@@ -256,7 +256,8 @@ footer {
   background-color: rgba(93, 52, 55, 0.474);
   font-weight: 700;
   text-decoration: underline;
-  box-shadow: 0 4px 1
+  box-shadow: 0 4px 10px rgba(255,255,255,.5);
+  border-radius: 8px;
 }
 
 .nav-links a:hover {
