@@ -286,7 +286,6 @@
   </footer>
 
   <script>
-    // DATA DENGAN NAMA FILE DAN EKSTENSI BENAR SESUAI ISI UTAMA GITHUB LO
     const productData = [
       { id: 1, name: 'V-Phone Z Pro', category: 'gaming', price: 'Rp. 1.500.000', image: 'phone-2.jpeg' },
       { id: 2, name: 'V-Camera Pro', category: 'camera', price: 'Rp. 3.500.000', image: 'camx.png' },
@@ -329,16 +328,19 @@
 
     const headerBg = document.querySelector('.header-bg');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) headerBg.classList.add('show');
-      else headerBg.classList.remove('show');
+      if (window.scrollY > 100) { headerBg.classList.add('show'); } 
+      else { headerBg.classList.remove('show'); }
     });
 
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if(navToggle && navLinks) {
-      navToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if(navToggle && navLinks) {
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+      }
+    });
   </script>
 </body>
 
 </html>
+
