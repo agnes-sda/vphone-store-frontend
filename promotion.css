@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
-/* ===========================
-   RESET
-=========================== */
 
 *,
 *::before,
@@ -23,9 +20,6 @@ body{
     min-height:100vh;
 }
 
-/* ===========================
-   HEADER (SAMA INDEX)
-=========================== */
 
 header{
     position:fixed;
@@ -71,9 +65,6 @@ header{
     z-index:10;
 }
 
-/* ===========================
-   NAVBAR (PERSIS INDEX)
-=========================== */
 
 nav{
     position:relative;
@@ -132,10 +123,6 @@ nav{
     transform:rotate(-45deg) translate(6px,-6px);
 }
 
-/* ===========================
-   MAIN
-=========================== */
-
 main{
     flex:1;
     padding:2rem;
@@ -149,9 +136,6 @@ main{
     margin-bottom:2rem;
 }
 
-/* ===========================
-   PROMOTION LIST
-=========================== */
 
 .promotion-list{
     display:flex;
@@ -161,10 +145,6 @@ main{
     max-width:1200px;
     margin:0 auto;
 }
-
-/* ===========================
-   PROMOTION CARD
-=========================== */
 
 .promotion-card{
     background:#fff;
@@ -203,7 +183,6 @@ main{
     margin-bottom:1rem;
 }
 
-/* BUTTON */
 
 .promotion-card button,
 .buy-btn{
@@ -222,10 +201,6 @@ main{
 .buy-btn:hover{
     background:#561e22;
 }
-
-/* ===========================
-   FOOTER (SAMA INDEX)
-=========================== */
 
 footer{
     padding:40px;
@@ -275,10 +250,6 @@ footer{
     border-top:1px solid rgba(255,255,255,.2);
     padding-top:1rem;
 }
-
-/* ===========================
-   RESPONSIVE (SAMA INDEX)
-=========================== */
 
 @media (max-width:768px){
 
