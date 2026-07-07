@@ -36,9 +36,6 @@ function resetAutoSlide() {
   autoSlideInterval = setInterval(nextSlide, 4000);
 }
 
-// showSlide(currentSlide);
-
-// Kode untuk munculin header pas scroll
 const headerBg = document.querySelector('.header-bg');
 
 window.addEventListener('scroll', () => {
