@@ -1,6 +1,4 @@
-// register.js
 document.addEventListener('DOMContentLoaded', () => {
-  /* ---------- 1.  FORM VALIDATION ---------- */
   const form = document.querySelector('.register-form');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -33,12 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       alert('Registration successful!');
-      // form.submit();   // ← aktifkan bila sudah ada backend
-      // form.reset();    // ← hapus nilai input setelah sukses
     });
   }
 
-  /* ---------- 2.  HEADER BG ON SCROLL ---------- */
   const headerBg = document.querySelector('.header-bg');
   const toggleHeaderBg = () => {
     if (window.scrollY > 40) headerBg.classList.add('show');
@@ -47,19 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleHeaderBg();
   window.addEventListener('scroll', toggleHeaderBg);
 
-  /* ---------- 3.  HAMBURGER NAV TOGGLE ---------- */
-  const navToggle = document.querySelector('.nav-toggle');   // tombol ☰
-  const navLinks = document.querySelector('.nav-links');    // <ul> menu
+  const navToggle = document.querySelector('.nav-toggle');   
+  const navLinks = document.querySelector('.nav-links');    
 
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active'); // (jika ingin animasi X)
-      navLinks.classList.toggle('show');    // tampil/sembunyi menu
+      navToggle.classList.toggle('active'); 
+      navLinks.classList.toggle('show');   
     });
   }
 });
 
-// Initial load all products
 displayProducts('all');
 
 window.addEventListener('scroll', () => {
@@ -69,20 +62,17 @@ window.addEventListener('scroll', () => {
     headerBg.classList.remove('show');
   }
 });
-// Responsive navigation toggle (hamburger menu)
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   const headerBg = document.querySelector('.header-bg');
 
-  // Hamburger menu toggle
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
   }
 
-  // Show header background on scroll
   const toggleHeaderBg = () => {
     if (window.scrollY > 40) {
       headerBg.classList.add('show');
