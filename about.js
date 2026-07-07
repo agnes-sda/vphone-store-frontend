@@ -1,4 +1,3 @@
-// Optional interactivity (e.g., future animations or scroll effects)
 console.log("About Us page loaded.");
 const headerBg = document.querySelector('.header-bg');
 
@@ -9,7 +8,6 @@ window.addEventListener('scroll', () => {
         headerBg.classList.remove('show');
     }
 });
-// Toggle nav menu saat tombol hamburger diklik
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 
