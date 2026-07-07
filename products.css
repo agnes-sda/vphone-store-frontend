@@ -1,7 +1,3 @@
-/* ==========================================
-   KODE STANDAR AWAL V-PHONE PRODUCTS STYLE
-   ========================================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +10,6 @@ body {
   color: #333;
 }
 
-/* Header & Navigation */
 header {
   background: linear-gradient(to right, #8a6361, #ab8280);
   padding: 20px 5%;
@@ -47,7 +42,6 @@ header {
   border-radius: 5px;
 }
 
-/* Filter Buttons Section */
 .filter-section {
   text-align: center;
   margin: 40px 0 20px 0;
@@ -78,9 +72,6 @@ header {
   background-color: #8a6361;
 }
 
-/* ==========================================
-   PENGATURAN UTAMA SEJAJAR 3 PRODUK (GRID)
-   ========================================== */
 .products, .products-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important; /* Pas maksa 3 kolom sejajar ke samping */
@@ -90,7 +81,6 @@ header {
   padding: 0 20px;
 }
 
-/* Card / Kotak Produk */
 .product, .product-card {
   background: #fff;
   border-radius: 15px;
@@ -103,14 +93,11 @@ header {
   justify-content: space-between;
 }
 
-/* ==========================================
-   PENJINAK UKURAN FOTO (BIAR GAK RAKSASA)
-   ========================================== */
 .product img, .product-card img {
   width: 100% !important;
-  max-width: 180px !important;  /* Lebar pas biar gak kegedean */
-  height: 200px !important;     /* Tinggi pas biar gak makan tempat */
-  object-fit: contain !important; /* Foto auto proporsional, gak bakal gepeng */
+  max-width: 180px !important;  
+  height: 200px !important;   
+  object-fit: contain !important; 
   margin-bottom: 15px;
   display: block;
 }
@@ -127,7 +114,6 @@ header {
   margin-bottom: 15px;
 }
 
-/* Tombol Buy Now */
 .product button, .buy-now-btn, .buy-btn {
   background-color: #ab8280;
   color: white;
@@ -144,7 +130,6 @@ header {
   background-color: #8a6361;
 }
 
-/* Footer Section */
 footer {
   background-color: #8a6361;
   color: #fff;
@@ -184,7 +169,6 @@ footer {
   color: #ddd;
 }
 
-/* Responsive HP */
 @media (max-width: 768px) {
   .products, .products-grid {
     grid-template-columns: 1fr !important;
