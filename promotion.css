@@ -65,14 +65,12 @@ header {
   font-weight: bold;
   z-index: 10;
 }
-main {
-  flex: 1;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 140px 20px 40px;
-}
 
+main{
+    flex:1;
+    padding:2rem;
+    padding-top:100px;
+}
 
 .section-title {
   text-align: center;
@@ -82,15 +80,11 @@ main {
   margin-bottom: 2rem;
 }
 
-.promotion-list {
-  display:grid;
-  grid-template-columns:repeat(2,300px);
-  justify-content:center;
-  gap:40px;
-  margin:0 auto;
-  padding-bottom: 2rem;
-  min-height: 540px;
-  overflow: visible;
+.promotion-list{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:2rem;
 }
 @media (max-width:768px){
     .promotion-list{
@@ -100,7 +94,7 @@ main {
 
 .promotion-card {
     background:#fff;
-    width:300px;
+    width:280px;
     border-radius:15px;
     overflow:hidden;
     padding:20px;
